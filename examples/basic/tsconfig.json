@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "moduleResolution": "node",
+    "plugins": [
+      {
+        "transform": "../../lib/transformer",
+        "languages": ["ru", "en"],
+        "targetLanguage": "en"
+      }
+    ]
+  },
+  "files": ["../../types.d.ts", "./index.ts"],
+  "exclude": ["node_modules"]
+}

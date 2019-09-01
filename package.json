@@ -1,0 +1,14 @@
+{
+  "name": "ts-transformer-i18n",
+  "version": "0.1.0",
+  "main": "./lib/transformer.js",
+  "typings": "./types.d.ts",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^12.7.3",
+    "typescript": "^3.6.2"
+  }
+}
