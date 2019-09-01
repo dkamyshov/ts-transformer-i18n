@@ -66,6 +66,8 @@ $ ttsc index.ts
 
 ### webpack, awesome-typescript-loader
 
+[See example](examples/react/README.md).
+
 ```javascript
 const i18nTransformer = require('ts-transformer-i18n').default;
 
