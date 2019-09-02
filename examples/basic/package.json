@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
+    "dev": "nodemon --exec \"ttsc index.ts ../../types.d.ts\"",
     "build": "ttsc index.ts ../../types.d.ts"
   },
   "devDependencies": {
+    "nodemon": "^1.19.1",
     "ttypescript": "^1.5.7",
     "typescript": "^3.6.2"
   }
