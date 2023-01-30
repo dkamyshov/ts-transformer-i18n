@@ -5,7 +5,7 @@
       {
         "transform": "../../lib/transformer",
         "languages": ["ru", "en"],
-        "targetLanguage": "en"
+        "targetLanguage": "ru"
       }
     ]
   },

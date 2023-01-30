@@ -1,28 +1,28 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const i18nTransformer = require("../../../lib/transformer").default;
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const i18nTransformer = require('../../../lib/transformer').default;
 
 const createConfig = (
-  languages = ["ru", "en"],
-  targetLanguage = "ru",
-  publicPath = "/"
+  languages = ['ru', 'en'],
+  targetLanguage = 'ru',
+  publicPath = '/'
 ) => {
   return {
-    mode: "development",
-    devtool: "source-map",
+    mode: 'development',
+    devtool: 'source-map',
 
     entry: {
-      main: "./src/index.tsx"
+      main: './src/index.tsx',
     },
 
     output: {
       path: path.resolve(__dirname, `../dist/${targetLanguage}`),
       publicPath,
-      filename: "[name].js"
+      filename: '[name].js',
     },
 
     resolve: {
-      extensions: [".tsx", ".js"]
+      extensions: ['.tsx', '.js'],
     },
 
     module: {
@@ -30,25 +30,24 @@ const createConfig = (
         {
           test: /\.tsx?$/,
           use: {
-            loader: "awesome-typescript-loader",
+            loader: 'ts-loader',
             options: {
-              compiler: "ttypescript",
               transpileOnly: true,
               getCustomTransformers: () => ({
                 before: [
                   i18nTransformer({
                     languages,
-                    targetLanguage
-                  })
-                ]
-              })
-            }
-          }
-        }
-      ]
+                    targetLanguage,
+                  }),
+                ],
+              }),
+            },
+          },
+        },
+      ],
     },
 
-    plugins: [new HtmlWebpackPlugin()]
+    plugins: [new HtmlWebpackPlugin()],
   };
 };
 

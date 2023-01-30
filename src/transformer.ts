@@ -102,7 +102,9 @@ export default (options: I18NOptions | ts.Program) => {
             cache[targetLanguage] &&
             typeof cache[targetLanguage][identifier] === 'string'
           ) {
-            return ts.createStringLiteral(cache[targetLanguage][identifier]);
+            return ts.factory.createStringLiteral(
+              cache[targetLanguage][identifier]
+            );
           } else {
             languages.forEach(languageCode => {
               if (!cache[languageCode]) {
